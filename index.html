@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f8f8fb">
+  <meta name="description" content="Convert, compress and organize files with FILELAB. Your files stay on your computer.">
+  <title>FILELAB — files, finished</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#tools" data-i18n="skipTools">Skip to tools</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="FILELAB home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span>FILE<span class="brand-accent">LAB</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation" data-i18n-aria="mainNav">
+      <a class="nav-link active" href="#top" data-i18n="home">Home</a>
+      <a class="nav-link" href="#tools" data-i18n="allTools">All tools</a>
+      <a class="nav-link" href="#how" data-i18n="how">How it works</a>
+      <a class="nav-link" href="#about" data-i18n="about">About</a>
+    </nav>
+    <div class="top-actions">
+      <label class="sr-only" for="language" data-i18n="languageLabel">Language</label>
+      <select id="language" class="quiet-select" aria-label="Language" data-i18n-aria="languageLabel">
+        <option value="en">EN</option>
+        <option value="ar">عربي</option>
+      </select>
+      <button id="theme-toggle" class="icon-button" type="button" aria-label="Switch to dark theme" title="Theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8a8.6 8.6 0 1 0 11.7 11.7Z"/></svg>
+      </button>
+      <a class="nav-cta" href="#tools"><span data-i18n="getStarted">Get started</span><span aria-hidden="true">↗</span></a>
+      <button id="menu-toggle" class="icon-button menu-button" type="button" aria-label="Open navigation" aria-expanded="false" data-i18n-aria="navOpen">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span><span data-i18n="localBadge">PRIVATE BY DESIGN · RUNS LOCALLY</span></div>
+        <h1 id="hero-title"><span data-i18n="heroLine1">Drop Any File.</span><br><span class="headline-accent" data-i18n="heroLine2">Get It Done.</span></h1>
+        <p class="hero-description" data-i18n="heroDescription">Convert, compress, edit and manage your files instantly. Drop one in and get on with your day.</p>
+        <div class="hero-proof">
+          <span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 10 3 3 7-7"/></svg><span data-i18n="localProcessing">Processed on this computer</span></span>
+          <span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 10 3 3 7-7"/></svg><span data-i18n="noAccount">No account needed</span></span>
+        </div>
+      </div>
+      <div class="hero-drop-wrap">
+        <div id="hero-drop" class="hero-drop" role="button" tabindex="0" aria-label="Drop a file here or browse" data-i18n-aria="heroBrowseLabel">
+          <div class="hero-drop-orbit orbit-one"></div>
+          <div class="hero-drop-orbit orbit-two"></div>
+          <div class="drop-art" aria-hidden="true">
+            <span class="art-paper paper-back"></span><span class="art-paper paper-front"><i></i><i></i><i></i></span>
+            <span class="art-arrow">↓</span>
+          </div>
+          <h2 data-i18n="dropTitle">Drop a file. We'll take it from here.</h2>
+          <p data-i18n="dropSubtitle">Smart pick chooses the closest available tool.</p>
+          <button id="browse-button" class="browse-button" type="button"><span class="browse-icon" aria-hidden="true">＋</span><span data-i18n="browse">Browse files</span></button>
+          <input id="global-file" type="file" hidden multiple aria-label="Choose files" data-i18n-aria="chooseFiles">
+          <div class="drop-limit"><span data-i18n="upTo">Up to</span> <span id="max-size-label">40 MB</span> <span data-i18n="perFile">per file</span><span class="drop-separator">·</span><span data-i18n="filesGoNowhere">Files never leave this device</span></div>
+        </div>
+        <div class="upload-caption" id="privacy"><span class="caption-lock" aria-hidden="true">⌑</span><span data-i18n="privacyCaption">No cloud upload. Temporary outputs clear after 1 hour.</span></div>
+      </div>
+    </section>
+
+    <section class="tool-section shell" id="tools" aria-labelledby="tools-title">
+      <div class="section-heading">
+        <div><div class="section-kicker" data-i18n="toolbox">THE TOOLBOX</div><h2 id="tools-title"><span data-i18n="toolsTitle">The right tool,</span> <span class="headline-accent" data-i18n="toolsTitleAccent">right here.</span></h2></div>
+        <p data-i18n="toolsIntro">One click to choose a tool. Drop your file on any card to start.</p>
+      </div>
+      <div class="tool-controls">
+        <label class="search-box" for="tool-search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4 4"/></svg>
+          <input id="tool-search" type="search" placeholder="Search a tool or format…" autocomplete="off" data-i18n-placeholder="searchPlaceholder" aria-label="Search a tool or format…" data-i18n-aria="searchPlaceholder">
+          <kbd>/</kbd>
+        </label>
+        <div class="category-scroll" id="category-filters" role="group" aria-label="Filter tools by category" data-i18n-aria="filterTools"></div>
+      </div>
+      <div class="catalog-status" id="catalog-status" aria-live="polite">Loading the toolbox…</div>
+      <div id="tool-grid" class="tool-grid" aria-live="polite"></div>
+      <div id="empty-state" class="empty-state" hidden><span class="empty-icon">⌕</span><h3 data-i18n="noMatches">No tools found</h3><p data-i18n="tryDifferent">Try another format or search term.</p></div>
+      <section id="history-panel" class="history-panel" hidden aria-labelledby="history-title">
+        <div class="history-heading"><div><div class="section-kicker" data-i18n="recent">RECENT</div><h3 id="history-title" data-i18n="history">Your history</h3></div><button id="clear-history" class="text-button" type="button" data-i18n="clearHistory">Clear history</button></div>
+        <div id="history-list" class="history-list"></div>
+      </section>
+      <div id="bundle-bar" class="bundle-bar" hidden><span id="bundle-count"></span><button id="bundle-download" class="secondary-button" type="button"><span aria-hidden="true">↓</span><span data-i18n="downloadAll">Download all as ZIP</span></button></div>
+    </section>
+
+    <section id="how" class="how-section">
+      <div class="shell how-inner">
+        <div><div class="section-kicker" data-i18n="simple">NO DETOURS</div><h2><span data-i18n="howTitleStart">Three steps.</span> <span class="headline-accent" data-i18n="howTitleAccent">Done.</span></h2><p data-i18n="howCopy">No account, no maze of settings. Your original file stays untouched.</p></div>
+        <div class="steps-grid">
+          <article class="step-card"><span class="step-number">01</span><span class="step-symbol">↧</span><h3 data-i18n="stepOne">Choose your tool</h3><p data-i18n="stepOneCopy">Find the operation in the toolbox, or let Smart pick one.</p></article>
+          <article class="step-card"><span class="step-number">02</span><span class="step-symbol">⌁</span><h3 data-i18n="stepTwo">Drop your file</h3><p data-i18n="stepTwoCopy">We check the file itself before the selected job begins.</p></article>
+          <article class="step-card"><span class="step-number">03</span><span class="step-symbol">↓</span><h3 data-i18n="stepThree">Download the result</h3><p data-i18n="stepThreeCopy">See the real output size, then download or run another.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="about" class="footer shell">
+    <div class="footer-main">
+      <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>FILE<span class="brand-accent">LAB</span></span></a>
+      <p data-i18n="footerPromise">A small, honest toolbox for everyday file work.</p>
+      <div class="engine-status"><span class="status-dot"></span><span id="engine-label">Local engine connecting…</span></div>
+    </div>
+    <div class="footer-links"><a href="#tools" data-i18n="supported">Supported formats</a><a href="#privacy" data-i18n="privacy">Privacy</a><a href="#about" data-i18n="aboutLabel">About FILELAB</a></div>
+    <div class="footer-bottom"><span>© 2026 FILELAB</span><span data-i18n="footerNote">Local mode · Files auto-delete after 1 hour</span></div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="result-dialog" class="workspace-dialog" aria-labelledby="result-dialog-title">
+    <div class="dialog-heading">
+      <div><div class="section-kicker" data-i18n="resultLabel">RESULT WORKSPACE</div><h2 id="result-dialog-title" data-i18n="previewTitle">Preview and finish</h2></div>
+      <button id="close-result-dialog" class="icon-button" type="button" aria-label="Close" data-i18n-aria="close">×</button>
+    </div>
+    <p id="result-dialog-note" class="dialog-note"></p>
+    <label class="rename-field"><span data-i18n="filename">File name</span><input id="result-filename" type="text" autocomplete="off" spellcheck="false"></label>
+    <div id="result-comparison" class="result-comparison" hidden></div>
+    <div id="result-preview-body" class="result-preview-body"></div>
+    <label id="result-editor-wrap" class="result-editor-wrap" hidden><span data-i18n="editText">Edit text output</span><textarea id="result-editor" spellcheck="false"></textarea></label>
+    <div class="dialog-actions">
+      <button id="delete-result" class="text-button danger-button" type="button" data-i18n="deleteResult">Delete result</button>
+      <span class="dialog-spacer"></span>
+      <button id="save-result-edit" class="secondary-button" type="button" hidden data-i18n="saveEdits">Save text edits</button>
+      <button id="download-result" class="browse-button" type="button" data-i18n="download">Download</button>
+    </div>
+  </dialog>
+  <div id="drop-overlay" class="drop-overlay" aria-hidden="true"><div><span>+</span><strong data-i18n="dropAnywhere">Drop files anywhere to find a tool</strong><small data-i18n="dropAnywhereAr">أفلت الملفات هنا لاختيار الأداة المناسبة</small></div></div>
+  <script src="/netlify-engine.js" defer></script>
+  <script src="/app.js" defer></script>
+</body>
+</html>

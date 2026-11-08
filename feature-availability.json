@@ -1,0 +1,40 @@
+{
+  "implemented": [
+    "pdf-compress", "pdf-merge", "pdf-split", "pdf-extract", "pdf-rotate", "pdf-page-numbers", "pdf-text", "pdf-docx", "pdf-strip-metadata",
+    "images-to-pdf", "image-jpg-png", "image-png-jpg", "image-png-webp", "image-jpg-webp", "image-webp-png", "image-compress", "image-resize", "image-rotate", "image-flip", "image-strip-metadata", "image-info",
+    "docx-text", "docx-pdf", "xlsx-csv", "csv-xlsx", "text-pdf",
+    "create-zip", "extract-zip", "archive-list",
+    "json-format", "json-csv", "csv-json", "yaml-json", "json-yaml", "xml-format", "base64-encode", "base64-decode",
+    "sha256", "md5", "compare-text", "file-info"
+  ],
+  "implemented_with_limitations": {
+    "pdf-compress": "Rewrites and compresses page content streams. A PDF may not shrink if its embedded assets already dominate its size.",
+    "pdf-text": "Extracts selectable text only; scanned pages need OCR.",
+    "pdf-docx": "Recreates extracted text in a basic DOCX; page layout, images and complex formatting are not preserved.",
+    "docx-pdf": "Creates a text-first PDF; original layout, images and complex formatting are simplified.",
+    "xlsx-csv": "Exports the first worksheet only.",
+    "image-compress": "Re-encodes JPEG/WEBP at the selected quality and losslessly optimizes PNG; size may increase.",
+    "image-resize": "Proportional maximum-width downscale only; no crop or upscale.",
+    "image-strip-metadata": "Re-encodes supported raster formats and omits EXIF metadata; animated image frames are not preserved.",
+    "extract-zip": "Returns a new ZIP with sanitized, flattened filenames; it does not write archive paths onto disk.",
+    "xml-format": "Rejects DTD and entity declarations; not intended as a validating XML schema engine."
+  },
+  "requires_external_dependency": {
+    "video_and_audio_conversion": "Not available: FFmpeg is not installed in this environment.",
+    "ocr": "Not available: a Tesseract OCR engine is not installed.",
+    "pdf_to_jpg_or_png": "Not available: a PDF page rasterizer such as Poppler is not installed.",
+    "background_removal": "Not available: no local segmentation model or configured service is present.",
+    "avif": "Not available: an AVIF encoder/decoder is not present in the installed image engine.",
+    "office_layout_conversion": "Not available: LibreOffice headless is not installed.",
+    "rar_and_7z": "Not available: archive executables or libraries for these formats are not installed."
+  },
+  "not_implemented": [
+    "PDF password protection/unlock, redaction, watermarking, deletion/reordering, repair, PDF-to-image, scanned OCR, and page editing",
+    "Image crop, arbitrary rotation angle, color/quality controls beyond re-encoding, and background removal",
+    "Audio/video format conversion, trimming, cropping, resizing, frame extraction, merging, mute, bitrate changes, silence removal, and compression",
+    "RTF/ODT conversion, XLSX/PPTX/HTML-to-PDF, OCR, and Word-to-PDF layout fidelity",
+    "RAR/7Z/TAR/GZ extraction, TAR.GZ creation, and 7Z creation",
+    "HTML/CSS/JavaScript minification, YAML-to-JSON schema validation, and binary-aware file comparison",
+    "Batch rename, generic file preview, and archive selected-file extraction"
+  ]
+}
